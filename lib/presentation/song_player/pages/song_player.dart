@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sporifyyy/common/helpers/is_dark_mode.dart';
 import 'package:sporifyyy/common/widgets/appbar/app_bar.dart';
+import 'package:sporifyyy/common/widgets/favorite_button/favorite_button.dart';
 import 'package:sporifyyy/core/configs/theme/app_colors.dart';
 import 'package:sporifyyy/domain/entities/song/song.dart';
 import 'package:sporifyyy/presentation/song_player/bloc/song_player_cubit.dart';
@@ -85,13 +85,7 @@ class SongPlayerPage extends StatelessWidget {
             )
           ],
         ),
-        IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.favorite_outline_outlined,
-              size: 35,
-              color: context.isDarkMode ? Color(0xff565656) : Color(0xffB4B4B4),
-            ))
+        FavoriteButton(songEntity: songEntity)
       ],
     );
   }

@@ -3,14 +3,20 @@ import 'package:sporifyyy/common/helpers/is_dark_mode.dart';
 
 class BasicAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
-  final Widget ? action; 
+  final Widget? action;
+  final Color? backgroundColor;
   final bool hindenBack;
-  const BasicAppbar({super.key, this.title, this.action ,this.hindenBack = false});
+  const BasicAppbar(
+      {super.key,
+      this.title,
+      this.action,
+      this.hindenBack = false,
+      this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor  ?? Colors.transparent,
       elevation: 0,
       centerTitle: true,
       title: title ?? const Text(''),

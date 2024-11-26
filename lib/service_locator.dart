@@ -6,10 +6,12 @@ import 'package:sporifyyy/data/sources/auth/auth_firebase_service.dart';
 import 'package:sporifyyy/data/sources/song/song_firebase_service.dart';
 import 'package:sporifyyy/domain/repository/auth/auth.dart';
 import 'package:sporifyyy/domain/repository/song/song.dart';
+import 'package:sporifyyy/domain/usercases/auth/get_user.dart';
 
 import 'package:sporifyyy/domain/usercases/auth/signin.dart';
 import 'package:sporifyyy/domain/usercases/auth/signup.dart';
 import 'package:sporifyyy/domain/usercases/song/add_or_remove_favorite_song.dart';
+import 'package:sporifyyy/domain/usercases/song/get_favorite_song.dart';
 import 'package:sporifyyy/domain/usercases/song/get_news_songs.dart';
 import 'package:sporifyyy/domain/usercases/song/get_play_list.dart';
 import 'package:sporifyyy/domain/usercases/song/is_favorite_song.dart';
@@ -37,4 +39,7 @@ Future<void> initialzeDependencies() async {
       AddOrRemoveFavoriteSongUseCase());
 
   sl.registerSingleton<IsFavoriteSongUseCase>(IsFavoriteSongUseCase());
+  sl.registerSingleton<GetUserUseCase>(GetUserUseCase());
+
+  sl.registerSingleton<GetFavoriteSongsUseCase>(GetFavoriteSongsUseCase());
 }

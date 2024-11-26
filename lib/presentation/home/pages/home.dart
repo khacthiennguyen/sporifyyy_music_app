@@ -7,6 +7,7 @@ import 'package:sporifyyy/core/configs/assets/app_vectors.dart';
 import 'package:sporifyyy/core/configs/theme/app_colors.dart';
 import 'package:sporifyyy/presentation/home/widgets/news_songs.dart';
 import 'package:sporifyyy/presentation/home/widgets/play_list.dart';
+import 'package:sporifyyy/presentation/profile/pages/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,6 +31,12 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: BasicAppbar(
           hindenBack: true,
+          action: IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
+              icon: Icon(Icons.person)),
           title: SvgPicture.asset(
             AppVectors.logo,
             height: 40,
@@ -53,7 +60,6 @@ class _HomePageState extends State<HomePage>
                 ],
               ),
             ),
-            
             const PlayList(),
           ],
         ),
