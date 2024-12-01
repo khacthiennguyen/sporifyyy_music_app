@@ -8,6 +8,7 @@ import 'package:sporifyyy/presentation/profile/bloc/favorite_song_cubit.dart';
 import 'package:sporifyyy/presentation/profile/bloc/favorite_song_state.dart';
 import 'package:sporifyyy/presentation/profile/bloc/profile_infor_cubit.dart';
 import 'package:sporifyyy/presentation/profile/bloc/profile_infor_state.dart';
+import 'package:sporifyyy/presentation/settings/pages/settings.dart';
 import 'package:sporifyyy/presentation/song_player/pages/song_player.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -21,6 +22,12 @@ class ProfilePage extends StatelessWidget {
           "Profile",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        action: IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()));
+            },
+            icon: const Icon(Icons.settings)),
         backgroundColor:
             context.isDarkMode ? Color(0xff2C2B2B) : Color(0xffFFFFFF),
       ),

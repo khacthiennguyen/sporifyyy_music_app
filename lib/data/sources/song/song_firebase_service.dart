@@ -151,7 +151,7 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
           .collection('Favorites')
           .get();
 
-       print("Number of documents: ${favoriteSnapshot.docs.length}");
+      print("Number of documents: ${favoriteSnapshot.docs.length}");
 
       for (var element in favoriteSnapshot.docs) {
         String songId = element['songId'];

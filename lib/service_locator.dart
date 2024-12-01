@@ -10,6 +10,7 @@ import 'package:sporifyyy/domain/usercases/auth/get_user.dart';
 
 import 'package:sporifyyy/domain/usercases/auth/signin.dart';
 import 'package:sporifyyy/domain/usercases/auth/signup.dart';
+import 'package:sporifyyy/domain/usercases/auth/turn_on_or_turn_off_biometrics.dart';
 import 'package:sporifyyy/domain/usercases/song/add_or_remove_favorite_song.dart';
 import 'package:sporifyyy/domain/usercases/song/get_favorite_song.dart';
 import 'package:sporifyyy/domain/usercases/song/get_news_songs.dart';
@@ -40,6 +41,7 @@ Future<void> initialzeDependencies() async {
 
   sl.registerSingleton<IsFavoriteSongUseCase>(IsFavoriteSongUseCase());
   sl.registerSingleton<GetUserUseCase>(GetUserUseCase());
-
   sl.registerSingleton<GetFavoriteSongsUseCase>(GetFavoriteSongsUseCase());
+  sl.registerSingleton<TurnOnOrTurnOffBiometricsUseCase>(
+      TurnOnOrTurnOffBiometricsUseCase());
 }

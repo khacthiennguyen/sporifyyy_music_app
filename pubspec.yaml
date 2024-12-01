@@ -44,6 +44,8 @@ dependencies:
   dartz:
   cloud_firestore:
   just_audio:
+  local_auth: ^2.3.0
+  shared_preferences: ^2.3.3
 
 
 dev_dependencies:
